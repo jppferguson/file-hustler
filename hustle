@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# downloads folder
+URL_DOWNLOAD_DIR="./downloads/"
+export URL_DOWNLOAD_DIR
+
+# check for wget
+command -v wget >/dev/null 2>&1 || {
+  echo >&2 "These scripts all require wget but it doesnt look like it is installed. Please install wget and try again.";
+  exit 1;
+}
+
+# list available scripts
+echo "Which script do you want to run?"
+echo "  [d] Download: Downloads a list of files from url-list.txt"
+echo "  [m] Mirror: Mirrors an entire site, by spidering it"
+echo "  [s] Single Page: Download a single page and all it's assets"
+read -n 1 scriptname
+
+if [ $scriptname = "d" ]; then
+  sh scripts/download.sh
+elif [ $scriptname = "m" ]; then
+  echo " - OK, please enter the url of the site you want to mirror: e.g. http://example.com"
+  read url
+  sh scripts/mirror.sh $url
+elif [ $scriptname = "s" ]; then
+  echo " - OK, please enter the full url of the page you want to download: e.g. http://example.com/about.html"
+  read url
+  sh scripts/single-page.sh $url
+else
+  echo "Script doesnt exist..."
+fi
