@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "build_systems": [
+    {
+      "name": "Download File List",
+      "cmd": ["URL_DOWNLOAD_DIR=downloads/ sh ./scripts/download.sh"],
+      "shell": true
+    }
+  ]
+}

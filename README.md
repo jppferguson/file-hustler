@@ -14,6 +14,10 @@ Scripts mainly taken from the [wget examples page][wget-examples]
     cd file-hustler
     ./hustle
 
+
+### Sublime Text Build Command (Download Script Only)
+If you're using Sublime, you can open this as a project, edit url-list.txt and use Sublime's build command `Ctrl+b`. BOOM!
+
 ## Available Scripts
 - Download: Downloads a list of files from url-list.txt
 - Mirror: Mirrors an entire site, by spidering it
