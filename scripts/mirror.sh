@@ -11,4 +11,4 @@ MIRROR_DOMAIN=$(echo "${MIRROR_URL}" | cut -d'/' -f3)
 MIRROR_LOG="${URL_DOWNLOAD_DIR}${MIRROR_DOMAIN}-mirror.log"
 
 # mirror the site
-wget --convert-links -r $MIRROR_URL -P $URL_DOWNLOAD_DIR -o $MIRROR_LOG
+wget --convert-links -r $MIRROR_URL -P $URL_DOWNLOAD_DIR -o $MIRROR_LOG --html-extension --wait=2
